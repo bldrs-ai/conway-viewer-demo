@@ -54,7 +54,7 @@ yarn build
 Once the demo is running in your browser:
 
 1.  **Load Model:** Click the "Load Model" button in the GUI and select a 3D model file (e.g., IFC, STEP) from your computer. The viewer uses the `@bldrs-ai/conway` library's loading mechanism.
-2.  **Load Environment Map:** Click the "Load Environment Map" button and select an `.hdr` file to use for image-based lighting. Loading an environment map will automatically disable the default ambient light.
+2.  **Load Environment Map:** Click the "Load Environment Map" button and select an `.hdr` file to use for image-based lighting. Loading an environment map will automatically disable the default ambient light. A good source of free HDR based environments is [Poly Haven](https://polyhaven.com/hdris).
 3.  **Adjust Settings:** Use the controls in the GUI to toggle features like Ambient Occlusion, Shadows, and Ambient Light, and to change the Shadow Quality.
 
 ## License

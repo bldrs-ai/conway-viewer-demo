@@ -22,6 +22,7 @@
     "jest": "^29.7.0",
     "parcel": "^2.14.2",
     "parcel-plugin-glsl": "^0.1.0",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.3.1",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.28.0"
@@ -31,8 +32,8 @@
     "@parcel/babel-preset-env": "^2.14.4"
   },
   "scripts": {
-    "start": "yarn build-tsc && yarn parcel index.html --open",
-    "build": "yarn build-tsc && yarn parcel build index.html --dist-dir dist --public-url ./",
+    "start": "yarn build-tsc && rimraf dist && yarn parcel index.html --open",
+    "build": "yarn build-tsc && rimraf dist && yarn parcel build index.html --dist-dir dist --public-url ./",
     "deploy": "yarn build && yarn lint && yarn test && git subtree push --prefix dist origin gh-pages",
     "build-tsc": "yarn tsc --build",
     "lint": "yarn eslint src --fix",

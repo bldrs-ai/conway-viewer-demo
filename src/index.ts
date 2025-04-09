@@ -7,6 +7,7 @@ import {initViewer} from '@bldrs-ai/conway/compiled/src/rendering/threejs/html_v
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js'
 import { ShadowQuality, SimpleViewerScene } from '@bldrs-ai/conway/compiled/src/rendering/threejs/simple_viewer_scene.js'
 import SceneObject from '@bldrs-ai/conway/compiled/src/rendering/threejs/scene_object'
+import { versionString } from '@bldrs-ai/conway/compiled/src'
 
 // Note, the below is an exmaple of how to set the module prefix
 // for the conway-geom package when using a non-default
@@ -33,6 +34,15 @@ window.onload = async () => {
     //scene.ambientOcclusion =
 
     const gui = new GUI()
+
+    // Add version string as a non-interactive label
+    const versionInfo = { version: versionString.substring( versionString.indexOf( 'v' ) ) }
+    const versionController = gui.add( versionInfo, 'version' ).name( 'Conway Version' ).disable()
+
+    // Apply fullbright style directly
+    versionController.domElement.classList.remove( 'disabled' )
+    versionController.domElement.style.color = '#FFFFFF'
+    versionController.$input.style.color = '#FFFFFF'
 
     gui.add( scene, 'ambientOcclusion' ).name( 'Ambient Occlusion' )
     gui.add( scene, 'hasAmbientLight' ).name( 'Has Ambient Light' )
