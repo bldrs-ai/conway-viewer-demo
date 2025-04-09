@@ -12,6 +12,11 @@ module.exports = {
     // Use babel-jest for js/jsx/mjs files (will use babel.config.js)
     '^.+\\.(js|jsx|mjs)$': 'babel-jest',
   },
+  // Explicitly match only TypeScript test files in the src directory
+  testMatch: [
+    '<rootDir>/src/**/*.spec.ts',
+    '<rootDir>/src/**/*.test.ts',
+  ],
   moduleNameMapper: {
     // Map the specific deep import path used in the source code
     // to its actual location within node_modules for Jest's resolver.
