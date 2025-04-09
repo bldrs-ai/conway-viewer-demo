@@ -33,7 +33,7 @@
   "scripts": {
     "start": "yarn build-tsc && yarn parcel index.html --open",
     "build": "yarn build-tsc && yarn parcel build index.html --dist-dir dist --public-url ./",
-    "deploy": "yarn build && git subtree push --prefix dist origin gh-pages",
+    "deploy": "yarn build && yarn lint && yarn test && git subtree push --prefix dist origin gh-pages",
     "build-tsc": "yarn tsc --build",
     "lint": "yarn eslint src --fix",
     "test": "jest"

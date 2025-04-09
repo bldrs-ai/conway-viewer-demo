@@ -4,13 +4,19 @@ module.exports = {
   // preset: 'ts-jest',
   testEnvironment: 'node',
   transform: {
-    // Use ts-jest for ts/tsx files
+    // Use ts-jest for ts/tsx files, and configure Babel inline for Jest
     '^.+\\.tsx?$': ['ts-jest', {
+      // Provide Babel configuration directly for Jest environment
+      babelConfig: {
+        presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
+      },
       // ts-jest configuration options go here
       // e.g., tsconfig: 'tsconfig.test.json' if you have a specific one
     }],
-    // Use babel-jest for js/jsx/mjs files (will use babel.config.js)
-    '^.+\\.(js|jsx|mjs)$': 'babel-jest',
+    // Re-add babel-jest specifically for JS/MJS files, configured inline
+    '^.+\\.(js|jsx|mjs)$': ['babel-jest', {
+      presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
+    }],
   },
   // Explicitly match only TypeScript test files in the src directory
   testMatch: [

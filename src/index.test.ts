@@ -8,7 +8,7 @@ import { initViewer } from '@bldrs-ai/conway/compiled/src/rendering/threejs/html
 describe('Viewer Initialization (index.ts)', () => {
   // Set platform environment variable as hinted in index.ts for non-browser env
   beforeAll(() => {
-    // eslint-disable-next-line no-process-env
+     
     process.env['PLATFORM'] = 'web'
   })
 
