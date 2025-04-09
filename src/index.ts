@@ -90,8 +90,6 @@ window.onload = async () => {
                     'load',
                     async () => {
 
-                        console.log( fileReader.result )
-
                         await scene.loadEquirectangularEnvironmentMapHDR( fileReader.result as string )
 
                         scene.hasAmbientLight = false
