@@ -19,6 +19,8 @@ interface ViewerScene {
     hasAmbientLight: boolean
     shadowsEnabled: boolean
     shadowQuality: ShadowQuality
+    limitCSGDepth: boolean
+    maxCSGDepth: number
     load( buffer: ArrayBuffer ): Promise<void>
     loadEquirectangularEnvironmentMapHDR( url: string ): Promise<void>
     onload?: ( scene: SimpleViewerScene, object: SceneObject ) => void
@@ -44,10 +46,17 @@ window.onload = async () => {
     versionController.domElement.style.color = '#FFFFFF'
     versionController.$input.style.color = '#FFFFFF'
 
-    gui.add( scene, 'ambientOcclusion' ).name( 'Ambient Occlusion' )
-    gui.add( scene, 'hasAmbientLight' ).name( 'Has Ambient Light' )
-    gui.add( scene, 'shadowsEnabled' ).name( 'Shadows Enabled' )
-    gui.add( scene, 'shadowQuality', {
+    const loaderFolder = gui.addFolder( 'Loader' )
+
+    loaderFolder.add( scene, 'limitCSGDepth').name( 'Limit CSG Depth' )
+    loaderFolder.add( scene, 'maxCSGDepth' ).name( 'Max CSG Depth' )
+    
+    const renderingFolder = gui.addFolder( 'Rendering' )
+    
+    renderingFolder.add( scene, 'ambientOcclusion' ).name( 'Ambient Occlusion' )
+    renderingFolder.add( scene, 'hasAmbientLight' ).name( 'Has Ambient Light' )
+    renderingFolder.add( scene, 'shadowsEnabled' ).name( 'Shadows Enabled' )
+    renderingFolder.add( scene, 'shadowQuality', {
         Low: ShadowQuality.LOW,
         Medium: ShadowQuality.MEDIUM,
         High: ShadowQuality.HIGH 
