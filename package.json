@@ -32,11 +32,12 @@
     "@parcel/babel-preset-env": "^2.14.4"
   },
   "scripts": {
-    "start": "yarn build-tsc && rimraf dist && yarn parcel index.html --open",
-    "build": "yarn build-tsc && rimraf dist && yarn parcel build index.html --dist-dir dist --public-url ./",
+    "start": "yarn build-tsc && rimraf dist && yarn rimraf .parcel-cache && yarn parcel index.html --open",
+    "build": "yarn build-tsc && rimraf dist && yarn rimraf .parcel-cache && yarn parcel build index.html --dist-dir dist --public-url ./",
     "deploy": "yarn build && yarn lint && yarn test && git subtree push --prefix dist origin gh-pages",
     "build-tsc": "yarn tsc --build",
     "lint": "yarn eslint src --fix",
-    "test": "jest"
+    "test": "jest",
+    "clean": "yarn rimraf dist && yarn rimraf .parcel-cache && yarn rimraf compiled"
   }
 }
