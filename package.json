@@ -28,7 +28,7 @@
     "typescript-eslint": "^8.28.0"
   },
   "dependencies": {
-    "@bldrs-ai/conway": "^0.18.886",
+    "@bldrs-ai/conway": "^1.336.1071",
     "@parcel/babel-preset-env": "^2.14.4"
   },
   "scripts": {

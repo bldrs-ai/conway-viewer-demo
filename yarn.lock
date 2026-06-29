@@ -926,11 +926,12 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bldrs-ai/conway@^0.18.886":
-  version "0.18.886"
-  resolved "https://registry.yarnpkg.com/@bldrs-ai/conway/-/conway-0.18.886.tgz#aa04f73377fb0547872a0e1b6c7576e340c8d3a6"
-  integrity sha512-eSEXML7QgHIHEM5Sc0t8dXdNhH9QW6urq3C+41KYPJ7V/oADLGNaxCZ7IOkJ/8oi/7n+125DR8lsPto4SIFpig==
+"@bldrs-ai/conway@^1.336.1071":
+  version "1.336.1071"
+  resolved "https://registry.yarnpkg.com/@bldrs-ai/conway/-/conway-1.336.1071.tgz#6e54a34e8be8bb81f8b76c0c3b3c1ecda3610ca3"
+  integrity sha512-r5Pd94avG6CYTtTsKApa+1XBdoKOs9sWvbQr591oK68UqB/htYx+J4Nf5JhfozcLKaWX5NdW/mc0g2QVsCXM6w==
   dependencies:
+    gl-matrix "3.4.3"
     seedrandom "3.0.5"
     three "^0.173.0"
     yargs "17.7.1"
@@ -5026,6 +5027,11 @@ glob-parent@^3.1.0:
   dependencies:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
+
+gl-matrix@3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/gl-matrix/-/gl-matrix-3.4.3.tgz#fc1191e8320009fd4d20e9339595c6041ddc22c9"
+  integrity sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==
 
 glob-parent@^5.1.2:
   version "5.1.2"
