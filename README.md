@@ -6,11 +6,10 @@ This project demonstrates the usage of the `@bldrs-ai/conway` viewer component, 
 
 *   Loads 3D models (including IFC and STEP formats) from user-selected files.
 *   Loads HDR environment maps (`.hdr`) for image-based lighting.
-*   Provides a GUI (using `lil-gui`) to control:
-    *   Ambient Occlusion
-    *   Ambient Light
-    *   Shadows (Enable/Disable)
-    *   Shadow Quality (Low, Medium, High)
+*   Displays the active `@bldrs-ai/conway` version in the GUI.
+*   Provides a GUI (using `lil-gui`) with two groups of controls:
+    *   **Loader** — cap CSG evaluation with `Limit CSG Depth` (toggle) and `Max CSG Depth` (value), to keep complex boolean geometry tractable.
+    *   **Rendering** — Ambient Occlusion, Ambient Light, Shadows (enable/disable), and Shadow Quality (Low, Medium, High).
 
 ## Getting Started
 
@@ -49,13 +48,21 @@ To create a distribution-ready build in the `dist/` directory:
 yarn build
 ```
 
+### Other Scripts
+
+*   `yarn test` — run the Jest test suite.
+*   `yarn lint` — run ESLint over `src` (with `--fix`).
+*   `yarn clean` — remove the `dist/`, `.parcel-cache`, and `compiled` build outputs.
+*   `yarn deploy` — build, lint, test, and publish `dist/` to the `gh-pages` branch.
+
 ## Usage
 
 Once the demo is running in your browser:
 
 1.  **Load Model:** Click the "Load Model" button in the GUI and select a 3D model file (e.g., IFC, STEP) from your computer. The viewer uses the `@bldrs-ai/conway` library's loading mechanism.
 2.  **Load Environment Map:** Click the "Load Environment Map" button and select an `.hdr` file to use for image-based lighting. Loading an environment map will automatically disable the default ambient light. A good source of free HDR based environments is [Poly Haven](https://polyhaven.com/hdris).
-3.  **Adjust Settings:** Use the controls in the GUI to toggle features like Ambient Occlusion, Shadows, and Ambient Light, and to change the Shadow Quality.
+3.  **Adjust Loader Settings:** Use the **Loader** folder to cap CSG evaluation depth — enable `Limit CSG Depth` and set `Max CSG Depth` to keep complex boolean geometry tractable.
+4.  **Adjust Rendering Settings:** Use the **Rendering** folder to toggle Ambient Occlusion, Shadows, and Ambient Light, and to change the Shadow Quality.
 
 ## License
 
